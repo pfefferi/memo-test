@@ -1,8 +1,16 @@
-let flipCard = document.querySelectorAll('#flipCard');
+let button = document.querySelector('#button');
+button.onclick = function () {
+    startGame();
+    unlockUserInput();
+};
 
-flipCard.forEach(
-    (element) =>
-        (element.onclick = function () {
+function unlockUserInput() {
+    let flipCard = document.querySelectorAll('#flipCard');
+    flipCard.forEach((element) => {
+        element.onclick = function () {
             element.classList.toggle('hover');
-        })
-);
+        };
+    });
+}
+
+function startGame() {}
