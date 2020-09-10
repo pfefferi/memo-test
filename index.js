@@ -1,5 +1,8 @@
-let flipCard = document.querySelector('#flipCard');
-flipCard.onclick = function () {
-    flipCard.classList.toggle('hover');
-};
-function flip() {}
+let flipCard = document.querySelectorAll('#flipCard');
+
+flipCard.forEach(
+    (element) =>
+        (element.onclick = function () {
+            element.classList.toggle('hover');
+        })
+);
