@@ -13,4 +13,21 @@ function unlockUserInput() {
     });
 }
 
-function startGame() {}
+function startGame() {
+    setImageClass();
+}
+
+const images = ['kjjj', 'milazzo'];
+
+function getRandomImage() {
+    const index = Math.floor(Math.random() * images.length);
+    return images[index];
+}
+
+function setImageClass() {
+    let flipCard = document.querySelectorAll('#flipCardBack');
+    flipCard.forEach((element) => {
+        let image = getRandomImage();
+        element.classList.add(image);
+    });
+}
