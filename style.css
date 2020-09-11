@@ -1,17 +1,4 @@
-.board {
-    margin-top: 1em;
-    margin-left: 3em;
-    margin-right: 3em;
-    display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-}
-.board > div {
-    background: #ddd;
-    padding: 1em;
-}
+/*//////////////////////////////////Header//////////////////////////////////////////*/
 
 .top {
     margin-top: 1em;
@@ -22,19 +9,35 @@
     grid-column-gap: 1em;
 }
 
+/*//////////////////////////////////Board//////////////////////////////////////////*/
+
+.board {
+    margin-top: 1em;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+}
+.board > div {
+    background: #ddd;
+    padding: 1em;
+}
+
+/*//////////////////////////////////Flip Card//////////////////////////////////////////*/
+
 .flip-card {
-    background-color: transparent;
     width: 200px;
     height: 200px;
     perspective: 1000px;
+    cursor: pointer;
 }
 
 .flip-card-inner {
-    position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
+    transition: transform 1s;
     transform-style: preserve-3d;
 }
 
@@ -56,11 +59,7 @@
 
 .flip-card-back {
     background-image: url('img/kjjj.jpeg');
-    background-position: center top;
-    background-repeat: no-repeat;
     background-size: cover;
-    padding: 3em;
-    text-align: center;
     color: white;
     transform: rotateY(180deg);
     border: solid #444;
