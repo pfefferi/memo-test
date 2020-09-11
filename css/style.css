@@ -59,11 +59,18 @@
 }
 
 .flip-card-back {
-    background-image: url('img/kjjj.jpeg');
     background-size: cover;
     color: white;
     transform: rotateY(180deg);
     border: solid #444;
 }
 
-/*/ ///////////////////////////////// ------- //////////////////////////////////////////*/
+/*/ ///////////////////////////////// Images //////////////////////////////////////////*/
+
+.kjjj {
+    background-image: url('../img/kjjj.jpeg');
+}
+
+.milazzo {
+    background-image: url('../img/milazzo.jpeg');
+}
