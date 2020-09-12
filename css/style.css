@@ -1,7 +1,7 @@
 /*/ ///////////////////////////////// ------- //////////////////////////////////////////*/
-/*////////////////////////////////// Header //////////////////////////////////////////*/
+/*/ ///////////////////////////////// Header //////////////////////////////////////////*/
 
-.top {
+.header {
     margin-top: 1em;
     margin-left: 1em;
     margin-right: 1em;
@@ -11,26 +11,28 @@
 }
 
 /*/ ///////////////////////////////// Board //////////////////////////////////////////*/
-
+.board-parent {
+    padding: 0 10%;
+}
 .board {
-    margin-top: 1em;
-    margin-left: 15vw;
-    margin-right: 15vw;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    grid-template-columns: repeat(4, 20vw);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    padding: 0 auto;
 }
 .board > div {
     background: #ddd;
-    padding: 1em;
+    padding: 1vw;
 }
 
-/*////////////////////////////////// Flip Card //////////////////////////////////////////*/
+/*/ ///////////////////////////////// Flip Card //////////////////////////////////////////*/
 
 .flip-card {
-    width: 200px;
-    height: 200px;
+    width: 15vw;
+    height: 15vw;
+    max-width: 180px;
+    max-height: 180px;
     perspective: 1000px;
     cursor: pointer;
 }
