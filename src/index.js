@@ -1,12 +1,12 @@
-const button = document.querySelector('#button');
-button.onclick = function () {
+const $button = document.querySelector('#button');
+$button.onclick = function () {
     startGame();
     unlockUserInput();
 };
 
 function unlockUserInput() {
-    const flipCard = document.querySelectorAll('#flipCard');
-    flipCard.forEach((element) => {
+    const $flipCard = document.querySelectorAll('#flipCard');
+    $flipCard.forEach((element) => {
         element.onclick = function () {
             element.classList.toggle('hover');
         };
@@ -18,7 +18,7 @@ function startGame() {
     setImageClass();
 }
 
-////////////////// Randommize Image //////////////////////////////////////
+////////// Randommize Image //////////
 
 const images = ['kjjj', 'milazzo', 'santos', 'ravenna', 'lampone', 'medina'];
 let imagesDouble = images.concat(images);
@@ -31,8 +31,8 @@ function getRandomImage() {
 }
 
 function setImageClass() {
-    const flipCard = document.querySelectorAll('#flipCardBack');
-    flipCard.forEach((card) => {
+    const $flipCardBack = document.querySelectorAll('#flipCardBack');
+    $flipCardBack.forEach((card) => {
         const image = getRandomImage();
         card.classList.add(image);
     });
@@ -44,8 +44,8 @@ function resetImages() {
 }
 
 function resetCard() {
-    const flipCard = document.querySelectorAll('#flipCardBack');
-    flipCard.forEach((card) => {
+    const $flipCardBack = document.querySelectorAll('#flipCardBack');
+    $flipCardBack.forEach((card) => {
         images.forEach((element) => {
             card.classList.remove(element);
         });
@@ -55,5 +55,3 @@ function resetCard() {
 function resetImagesDouble() {
     imagesDouble = images.concat(images);
 }
-
-///////////////////////////////////////////////////
