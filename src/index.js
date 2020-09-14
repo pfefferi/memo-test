@@ -85,7 +85,11 @@ function manageBoard() {
     };
 }
 
-function manageCards() {
+function manageCards(element) {
     if (!$firstCard) {
+        firstCard = element;
+    } else {
+        secondCard = element;
+        compareCards(firstCard, secondCard);
     }
 }
