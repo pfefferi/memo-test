@@ -16,6 +16,7 @@ function unlockUserInput() {
 function startGame() {
     resetImages();
     setImageClass();
+    resetFirstCard();
 }
 
 ////////// Randommize Image //////////
@@ -40,6 +41,8 @@ function setImageClass() {
     });
 }
 
+////////// Reset //////////
+
 function resetImages() {
     resetCard();
     resetImagesDouble();
@@ -58,6 +61,10 @@ function resetCard() {
 
 function resetImagesDouble() {
     imagesDouble = images.concat(images);
+}
+
+function resetFirstCard() {
+    $firstCard = null;
 }
 
 ////////// Manage Cards //////////
