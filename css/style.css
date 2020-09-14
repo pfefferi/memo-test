@@ -91,3 +91,13 @@
 .medina {
     background-image: url('../img/medina.jpg');
 }
+
+/*/ ///////////////////////////////// Success //////////////////////////////////////////*/
+
+.hide {
+    display: none;
+}
+
+.success {
+    text-align: center;
+}

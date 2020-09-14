@@ -1,10 +1,10 @@
 const $button = document.querySelector('#button');
 $button.onclick = function () {
     startGame();
-    unlockUserInput();
+    userInput();
 };
 
-function unlockUserInput() {
+function userInput() {
     const $flipCard = document.querySelectorAll('#flipCard');
     $flipCard.forEach((element) => {
         element.onclick = function () {
@@ -107,12 +107,12 @@ function compareCards(first, second) {
         firstCard = null;
         secondCard = null;
     } else if (first.className == second.className) {
-        console.log('match');
         animationMatch(first, second);
         firstCard = null;
         secondCard = null;
+        success++;
+        checkSuccess();
     } else {
-        console.log('not match');
         animationNotMatch(first, second);
         firstCard = null;
         secondCard = null;
@@ -151,4 +151,17 @@ function animationNotMatch(first, second) {
             }, 850);
         }
     });
+}
+
+////////// Success //////////
+
+let success = 0;
+
+function checkSuccess() {
+    if (success == 6) {
+        setTimeout(() => {
+            document.querySelector('.board-parent').classList.add('hide');
+            document.querySelector('.success').classList.remove('hide');
+        }, 2500);
+    }
 }
