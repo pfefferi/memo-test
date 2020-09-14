@@ -17,6 +17,7 @@ function startGame() {
     resetImages();
     setImageClass();
     resetFirstCard();
+    manageBoard();
 }
 
 ////////// Randommize Image //////////
@@ -36,7 +37,7 @@ function setImageClass() {
     $flipCardBack.forEach((card) => {
         const image = getRandomImage();
         card.classList.add(image);
-        const $parent = card.parentNode.parentNode;
+        const $parent = card.parentNode.parentNode.parentNode;
         $parent.classList.add(`_${image}`);
     });
 }
@@ -53,7 +54,7 @@ function resetCard() {
     $flipCardBack.forEach((card) => {
         images.forEach((element) => {
             card.classList.remove(element);
-            const $parent = card.parentNode.parentNode;
+            const $parent = card.parentNode.parentNode.parentNode;
             $parent.classList.remove(`_${element}`);
         });
     });
@@ -69,7 +70,7 @@ function resetFirstCard() {
 
 ////////// Manage Cards //////////
 
-let $firstCard = null;
+let firstCard = null;
 let secondCard = null;
 
 function manageBoard() {
@@ -93,7 +94,7 @@ function manageBoard() {
 }
 
 function manageCards(element) {
-    if (!$firstCard) {
+    if (!firstCard) {
         firstCard = element;
     } else {
         secondCard = element;
