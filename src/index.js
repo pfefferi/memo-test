@@ -62,26 +62,26 @@ function resetImagesDouble() {
 
 ////////// Manage Cards //////////
 
-let $firstCard;
+let $firstCard = null;
+let secondCard = null;
 
 function manageBoard() {
     const $board = document.querySelector('.board');
     $board.onclick = function (event) {
         const $element = event.target;
         if ($element.classList.contains('flip-card-back')) {
-            manageCards($element.parentNode.parentNode);
+            var parent = $element.parentNode.parentNode.parentNode;
         }
         if ($element.classList.contains('flip-card-front')) {
-            manageCards($element.parentNode.parentNode);
+            var parent = $element.parentNode.parentNode.parentNode;
         }
         if ($element.classList.contains('flip-card-inner')) {
-            manageCards($element.parentNode);
+            var parent = $element.parentNode.parentNode;
         }
         if ($element.classList.contains('flip-card')) {
-            manageCards($element);
-        } else {
-            return;
+            var parent = $element.parentNode;
         }
+        manageCards(parent);
     };
 }
 
