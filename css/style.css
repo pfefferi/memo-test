@@ -21,7 +21,7 @@
     grid-row-gap: 1em;
     padding: 0 auto;
 }
-.board > div {
+.board > div > div {
     background: #ddd;
     padding: 1vw;
 }
