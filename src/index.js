@@ -46,7 +46,7 @@ function setImageClass() {
 ////////// Reset //////////
 
 function resetBoard() {
-    if (success >= 0) {
+    if (success > 0) {
         const $flipCard = document.querySelectorAll('#flipCard');
         $flipCard.forEach((element) => {
             element.classList.toggle('hover');
