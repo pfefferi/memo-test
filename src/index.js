@@ -110,3 +110,37 @@ function compareCards(first, second) {
         secondCard = null;
     }
 }
+
+////////// Animations //////////
+
+function animationMatch(first, second) {
+    const $flipCard = document.querySelectorAll('#flipCard');
+    $flipCard.forEach((element) => {
+        if (element.parentNode === first) {
+            setTimeout(() => {
+                element.classList.toggle('match');
+            }, 800);
+        }
+        if (element.parentNode === second) {
+            setTimeout(() => {
+                element.classList.toggle('match');
+            }, 800);
+        }
+    });
+}
+
+function animationNotMatch(first, second) {
+    const $flipCard = document.querySelectorAll('#flipCard');
+    $flipCard.forEach((element) => {
+        if (element.parentNode === first) {
+            setTimeout(() => {
+                element.classList.toggle('hover');
+            }, 800);
+        }
+        if (element.parentNode === second) {
+            setTimeout(() => {
+                element.classList.toggle('hover');
+            }, 850);
+        }
+    });
+}
