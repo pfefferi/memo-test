@@ -2,6 +2,7 @@ const $button = document.querySelector('#button');
 $button.onclick = function () {
     startGame();
     userInput();
+    manageBoard();
 };
 
 function userInput() {
@@ -14,10 +15,10 @@ function userInput() {
 }
 
 function startGame() {
+    resetBoard();
     resetImages();
     setImageClass();
     resetFirstCard();
-    manageBoard();
 }
 
 ////////// Randommize Image //////////
@@ -43,6 +44,19 @@ function setImageClass() {
 }
 
 ////////// Reset //////////
+
+function resetBoard() {
+    if (success >= 0) {
+        const $flipCard = document.querySelectorAll('#flipCard');
+        $flipCard.forEach((element) => {
+            element.classList.toggle('hover');
+            element.classList.toggle('match');
+        });
+    }
+    document.querySelector('.board-parent').classList.remove('hide');
+    document.querySelector('.success').classList.add('hide');
+    success = 0;
+}
 
 function resetImages() {
     resetCard();
