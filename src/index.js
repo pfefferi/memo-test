@@ -93,3 +93,20 @@ function manageCards(element) {
         compareCards(firstCard, secondCard);
     }
 }
+
+function compareCards(first, second) {
+    if (first === second) {
+        firstCard = null;
+        secondCard = null;
+    } else if (first.className == second.className) {
+        console.log('match');
+        animationMatch(first, second);
+        firstCard = null;
+        secondCard = null;
+    } else {
+        console.log('not match');
+        animationNotMatch(first, second);
+        firstCard = null;
+        secondCard = null;
+    }
+}
