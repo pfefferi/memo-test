@@ -176,6 +176,7 @@ function checkSuccess() {
         setTimeout(() => {
             document.querySelector('.board-parent').classList.add('hide');
             document.querySelector('.success').classList.remove('hide');
+            document.querySelector('.success-img').classList.remove('hide');
         }, 2500);
     }
 }
