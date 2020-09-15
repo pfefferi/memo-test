@@ -46,7 +46,7 @@ function setImageClass() {
 ////////// Reset //////////
 
 function resetBoard() {
-    if (success > 0) {
+    if (success >= 6) {
         const $flipCard = document.querySelectorAll('#flipCard');
         $flipCard.forEach((element) => {
             element.classList.toggle('hover');
@@ -55,6 +55,7 @@ function resetBoard() {
     }
     document.querySelector('.board-parent').classList.remove('hide');
     document.querySelector('.success').classList.add('hide');
+    document.querySelector('.success-img').classList.add('hide');
     success = 0;
 }
 

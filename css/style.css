@@ -2,7 +2,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 body {
-    background: #b8cedd;
+    background: #ffbd69;
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 /*/ ///////////////////////////////// Header //////////////////////////////////////////*/
@@ -30,7 +30,7 @@ body {
     padding: 0 auto;
 }
 .board > div > div {
-    background: #3282b8;
+    background: #f37121;
     padding: 1vw;
 }
 
@@ -72,16 +72,16 @@ body {
 .flip-card-front {
     border-radius: 0.5em;
 
-    background-color: #0f4c75;
-    border: solid #1b262c;
+    background-color: #111d5e;
+    border: solid #090f33;
 }
 
 .flip-card-back {
     border-radius: 0.5em;
     background-size: cover;
-    color: white;
+    color: #ffbd69;
     transform: rotateY(180deg);
-    border: solid #1b262c;
+    border: solid #090f33;
 }
 
 /*/ ///////////////////////////////// Images //////////////////////////////////////////*/
@@ -107,39 +107,45 @@ body {
 
 /*/ ///////////////////////////////// Success //////////////////////////////////////////*/
 
+.success {
+    line-height: 1.2;
+    text-align: center;
+    color: #111d5e;
+}
+
+.success-img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+}
+
 .hide {
     display: none;
 }
 
-.success {
-    line-height: 1.2;
-    text-align: center;
-    color: #082a41;
-}
-
-.success-img {
-    padding: 0vw 38%;
+.img {
+    border: 5px solid #f37121;
+    border-radius: 1.5em;
 }
 
 /*/ ///////////////////////////////// Button //////////////////////////////////////////*/
 
 .button {
-    border: 2px solid #464646;
+    border: 2px solid #090f33;
     border-radius: 2em;
-    color: white;
+    color: #ffffff;
     font-size: 0.8em;
     letter-spacing: 0.1em;
     padding: 1em 2em;
     transition: none 500ms ease-out;
     transition-property: color, background;
-    background: #3282b8;
-    opacity: 0.8;
+    background: #c70039;
 }
 
 .button:hover {
-    border: 2px solid rgb(0, 0, 0);
-    background: #0f4c75;
-    color: white;
+    border: 2px solid #090f33;
+    background: #f37121;
+    color: #ffffff;
     opacity: 1;
 }
 
@@ -150,14 +156,14 @@ body {
 /*/ ///////////////////////////////// Panel //////////////////////////////////////////*/
 
 .panel {
-    border: 2px solid #464646;
+    border: 2px solid #090f33;
     border-radius: 0.5em;
-    color: rgb(44, 44, 44);
+    color: #ffffff;
     font-size: 0.8em;
     letter-spacing: 0.1em;
     padding: 1em 2em;
     transition: none 500ms ease-out;
     transition-property: color, background;
-    background: #3282b8;
+    background: #c70039;
     opacity: 1;
 }
