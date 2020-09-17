@@ -1,8 +1,6 @@
 const $button = document.querySelector('#button');
 $button.onclick = function () {
     startGame();
-    userInput();
-    manageBoard();
 };
 
 function userInput() {
@@ -17,11 +15,24 @@ function userInput() {
     });
 }
 
+function blockUserInput() {
+    const $flipCard = document.querySelectorAll('#flipCard');
+    $flipCard.forEach((element) => {
+        element.onclick = function () {};
+    });
+}
+
 function startGame() {
     resetBoard();
-    resetImages();
-    setImageClass();
     resetFirstCard();
+    blockUserInput();
+    setTimeout(() => {
+        console.log('asd');
+        resetImages();
+        setImageClass();
+        userInput();
+        manageBoard();
+    }, 500);
 }
 
 ////////// Randommize Image //////////
@@ -49,13 +60,16 @@ function setImageClass() {
 ////////// Reset //////////
 
 function resetBoard() {
-    if (success >= 6) {
-        const $flipCard = document.querySelectorAll('#flipCard');
-        $flipCard.forEach((element) => {
+    const $flipCard = document.querySelectorAll('#flipCard');
+    $flipCard.forEach((element) => {
+        if (element.classList.contains('hover')) {
             element.classList.toggle('hover');
+        }
+        if (element.classList.contains('match')) {
             element.classList.toggle('match');
-        });
-    }
+        }
+    });
+
     document.querySelector('.board-parent').classList.remove('hide');
     document.querySelector('.success').classList.add('hide');
     document.querySelector('.success-img').classList.add('hide');
@@ -123,7 +137,6 @@ function manageCards(element, target) {
 
 function compareCards(first, second) {
     if (first === second) {
-        firstCard = null;
         secondCard = null;
     } else if (first.className == second.className) {
         animationMatch(first, second);
