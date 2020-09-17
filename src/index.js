@@ -9,7 +9,10 @@ function userInput() {
     const $flipCard = document.querySelectorAll('#flipCard');
     $flipCard.forEach((element) => {
         element.onclick = function () {
-            element.classList.toggle('hover');
+            if (element.classList.contains('hover')) {
+            } else {
+                element.classList.toggle('hover');
+            }
         };
     });
 }
@@ -91,26 +94,27 @@ let secondCard = null;
 function manageBoard() {
     const $board = document.querySelector('.board');
     $board.onclick = function (event) {
-        const $element = event.target;
-        if ($element.classList.contains('flip-card-back')) {
-            var parent = $element.parentNode.parentNode.parentNode;
+        const $target = event.target;
+        if ($target.classList.contains('flip-card-back')) {
+            var parent = $target.parentNode.parentNode.parentNode;
         }
-        if ($element.classList.contains('flip-card-front')) {
-            var parent = $element.parentNode.parentNode.parentNode;
+        if ($target.classList.contains('flip-card-front')) {
+            var parent = $target.parentNode.parentNode.parentNode;
         }
-        if ($element.classList.contains('flip-card-inner')) {
-            var parent = $element.parentNode.parentNode;
+        if ($target.classList.contains('flip-card-inner')) {
+            var parent = $target.parentNode.parentNode;
         }
-        if ($element.classList.contains('flip-card')) {
-            var parent = $element.parentNode;
+        if ($target.classList.contains('flip-card')) {
+            var parent = $target.parentNode;
         }
-        manageCards(parent);
+        manageCards(parent, $target);
     };
 }
 
-function manageCards(element) {
+function manageCards(element, target) {
     if (!firstCard) {
         firstCard = element;
+        target.onclick = function () {};
     } else {
         secondCard = element;
         compareCards(firstCard, secondCard);
