@@ -156,9 +156,40 @@ body {
     color: #ffffff;
     font-size: 0.8em;
     letter-spacing: 0.1em;
+
     padding: 1em 2em;
     transition: none 500ms ease-out;
     transition-property: color, background;
     background: #c70039;
     opacity: 1;
+}
+
+/*/ ///////////////////////////////// Score //////////////////////////////////////////*/
+
+.score {
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;*/
+    text-align: center;
+    font-size: 1.3em;
+    margin: 5% 25%;
+}
+
+.new-score,
+.best-score {
+    margin: auto auto;
+    padding: 1em;
+    color: #111d5e;
+    border: 5px solid #f37121;
+    border-radius: 1.5em;
+}
+
+.attempts,
+.best-attempts,
+.time,
+.best-time {
+    margin: auto auto;
+    padding: 1em;
+    color: #111d5e;
+    /*border: 5px solid #c70039;*/
+    border-radius: 1.5em;
 }
