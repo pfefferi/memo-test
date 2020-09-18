@@ -286,7 +286,7 @@ function timer() {
 }
 
 function startTimer() {
-    timerFunction = setInterval(timer, 300);
+    timerFunction = setInterval(timer, 1000);
 }
 
 function stopTimer() {
