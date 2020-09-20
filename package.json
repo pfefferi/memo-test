@@ -1,0 +1,26 @@
+{
+    "name": "memo-test",
+    "version": "1.0.0",
+    "description": "Juego memotest de Los Simuladores",
+    "main": "index.js",
+    "scripts": {
+        "start": "http-server",
+        "cypress-run": "cypress run",
+        "cypress-dev": "cypress open",
+        "test": "run-p start cypress-run",
+        "test-dev": "run-p start cypress-dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pfefferi/memo-test.git"
+    },
+    "author": "Lisandro Scarrone",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/pfefferi/memo-test/issues"
+    },
+    "homepage": "https://github.com/pfefferi/memo-test#readme",
+    "devDependencies": {
+        "cypress": "^5.1.0"
+    }
+}
