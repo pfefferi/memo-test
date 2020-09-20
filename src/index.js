@@ -218,7 +218,7 @@ let attempts = 0;
 let bestScore = 9999;
 
 let time = '';
-let bestTime = '59:59';
+let bestTime = '100:59:59';
 
 function updateAttempts() {
     document.querySelector('#attempts').textContent = attempts;
@@ -231,23 +231,31 @@ function resetScore() {
 }
 
 function updateScore() {
+    compareTime();
+    compareAttempts();
+}
+
+function compareAttempts() {
     document.querySelector('.attempts').textContent = `Intentos: ${attempts}`;
-    /*if (attempts < bestScore) {
+    if (attempts < bestScore) {
         bestScore = attempts;
         document.querySelector(
             '.best-attempts'
-        ).textContent = `${bestScore} intentos`;
-    }*/
+        ).textContent = `Intentos: ${bestScore}`;
+    }
+}
 
+function compareTime() {
+    timeScore = `00:${time}`;
     document.querySelector('.time').textContent = `Tiempo: ${time}`;
-    /*if (time <= bestTime) {
-        // es string, no numero
-        bestTime = time;
+    if (timeScore < bestTime) {
+        bestTime = timeScore;
         document.querySelector('.best-time').textContent = `Tiempo: ${time}`;
     }
-    if (bestTime === '59:59') {
+    if (bestTime === '100:59:59') {
+        bestTime = timeScore;
         document.querySelector('.best-time').textContent = `Tiempo: ${time}`;
-    }*/
+    }
 }
 
 ////////// Timer //////////
@@ -261,28 +269,31 @@ function timer() {
     if (seconds === 59) {
         seconds = 0;
         minutes++;
-        if (seconds > 9) {
-            time = `${minutes}:${seconds}`;
-            timeContainer.innerHTML = time;
-        } else {
-            time = `${minutes}:0${seconds}`;
-            timeContainer.innerHTML = time;
-        }
+        showTime();
     } else {
         seconds++;
-        if (minutes > 0) {
-            if (seconds > 9) {
-                time = `${minutes}:${seconds}`;
-                timeContainer.innerHTML = time;
-            } else {
-                time = `${minutes}:0${seconds}`;
-                timeContainer.innerHTML = time;
-            }
-        } else {
-            time = `${seconds}`;
-            timeContainer.innerHTML = time;
-        }
+        showTime();
     }
+}
+function showMinutes() {
+    if (minutes <= 9) {
+        return `0${minutes}`;
+    } else {
+        return `${minutes}`;
+    }
+}
+
+function showSeconds() {
+    if (seconds <= 9) {
+        return `0${seconds}`;
+    } else {
+        return `${seconds}`;
+    }
+}
+
+function showTime() {
+    time = `${showMinutes()}:${showSeconds()}`;
+    timeContainer.innerHTML = time;
 }
 
 function startTimer() {

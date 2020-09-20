@@ -167,8 +167,8 @@ body {
 /*/ ///////////////////////////////// Score //////////////////////////////////////////*/
 
 .score {
-    /*display: grid;
-    grid-template-columns: 1fr 1fr;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
     font-size: 1.3em;
     margin: 5% 25%;
@@ -179,7 +179,7 @@ body {
     margin: auto auto;
     padding: 1em;
     color: #111d5e;
-    border: 5px solid #f37121;
+    border: 5px solid #c70039;
     border-radius: 1.5em;
 }
 
@@ -190,9 +190,15 @@ body {
     margin: auto auto;
     padding: 1em;
     color: #111d5e;
-    /*border: 5px solid #c70039;*/
-    border-radius: 1.5em;
+    /*border: 5px solid #c70039;
+    border-radius: 1.5em;*/
 }
+
+.attempts,
+.best-attempts {
+    border-bottom: 3px solid #c70039;
+}
+
 /*/ ///////////////////////////////// Media Queries //////////////////////////////////////////*/
 
 @media all and (max-width: 768px) {
