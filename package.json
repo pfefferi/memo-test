@@ -21,6 +21,6 @@
     },
     "homepage": "https://github.com/pfefferi/memo-test#readme",
     "devDependencies": {
-        "cypress": "^5.1.0"
+        "cypress": "^5.2.0"
     }
 }
